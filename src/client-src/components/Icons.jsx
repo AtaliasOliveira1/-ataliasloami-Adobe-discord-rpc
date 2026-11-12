@@ -85,8 +85,15 @@ export function setCustom({url}){
 }
 
 export default function getIcon ({ className, version }) {
-  // <img className="rounded-sm w-[60px] h-[60px]" src="../../assets/AEFT.png" />  
-  
+  // <img className="rounded-sm w-[60px] h-[60px]" src="../../assets/AEFT.png" />
 
-  return <img className={className} src={icons[getApplicationID()][version]} />
+  const appId = getApplicationID()
+  const iconList = icons[appId]
+
+  if (!iconList || !iconList[version]) {
+    // Fallback to default icon if app icon not found
+    return <img className={className} src={icons.PHXS[version]} />
+  }
+
+  return <img className={className} src={iconList[version]} />
 }

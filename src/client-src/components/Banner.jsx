@@ -31,9 +31,9 @@ export default function Banner({className}) {
     // }, [])
 
     if(!banner){
-        return <div className={`w-[320px] h-[60px] bg-blurple ${className}`}/>
+        return <div className={`w-[280px] h-[50px] bg-blurple rounded-t-2xl ${className}`}/>
     }
 
-    return <img className={`w-[320px] h-[120px] border-4 border-black ${className}`} src={banner} alt="banner" />
+    return <img className={`w-[280px] h-[100px] border-4 border-black rounded-t-2xl ${className}`} src={banner} alt="banner" />
 
 }

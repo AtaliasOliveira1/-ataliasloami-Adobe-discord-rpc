@@ -18,21 +18,21 @@ export const rpcConfigurationTemplate = {
     enabled: {
         enabled: true,
         description: "",
-        name: "Rich Presence Enable",
+        name: "Ativar Rich Presence",
         type: "checkbox",
         hidden: false
     },
     details: {
         enabled: true,
         description: "",
-        name: "Details",
+        name: "Detalhes",
         type: "checkbox",
         hidden: false
     },
     state: {
         enabled: true,
         description: "",
-        name: "State",
+        name: "Estado",
         type: "checkbox",
         hidden: false
     },
@@ -47,42 +47,42 @@ export const rpcConfigurationTemplate = {
         enabled: true,
         value: "logo2",
         description: "",
-        name: "Large Icon",
+        name: "Ícone Grande",
         type: "dropdown",
         hidden: false
     },
     largeImageText: {
         enabled: true,
         description: "",
-        name: "Large Icon Text",
+        name: "Texto do Ícone Grande",
         type: "checkbox",
         hidden: false
     },
     smallImageKey: {
         enabled: true,
         description: "",
-        name: "Small Icon",
+        name: "Ícone Pequeno",
         type: "checkbox",
         hidden: false
     },
     smallImageText: {
         enabled: true,
         description: "",
-        name: "Small Icon Text",
+        name: "Texto do Ícone Pequeno",
         type: "checkbox",
         hidden: false
     },
     partySize: {
         enabled: true,
         description: "",
-        name: "Party Size",
+        name: "Tamanho do Grupo",
         type: "checkbox",
         hidden: true
     },
     partyMax: {
         enabled: true,
         description: "",
-        name: "Party Max",
+        name: "Máximo do Grupo",
         type: "checkbox",
         hidden: true
     }
@@ -92,14 +92,14 @@ export const extensionConfigurationTemplate = {
     updateNotification: {
         enabled: true,
         description: "",
-        name: "Update Notification",
+        name: "Notificação de Atualização",
         type: "checkbox",
         hidden: false
     },
     catMode: {
         enabled: false,
         description: "",
-        name: "Cat",
+        name: "Modo Gato",
         type: "checkbox",
         hidden: false
     },

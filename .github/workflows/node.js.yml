@@ -34,20 +34,20 @@ jobs:
           cmd: release:prod # will run `yarn release:prod` command
           
      # - name: Zip artifact for deployment
-     #   run: Compress-Archive -Path ./dist/com.tee.discord-rpc -Destination ./discord.rpc.zip
-      - name: Create folder (com.tee.discord-rpc)
-        run: New-Item -Path "./" -Name "com.tee.discord-rpc" -ItemType "directory"
+     #   run: Compress-Archive -Path ./dist/com.turquia.discord-rpc -Destination ./discord.rpc.zip
+      - name: Create folder (com.turquia.discord-rpc)
+        run: New-Item -Path "./" -Name "com.turquia.discord-rpc" -ItemType "directory"
       - name: Move artifact from dist
-        run: Move-Item -Path "./dist/com.tee.discord-rpc" -Destination "./com.tee.discord-rpc"
+        run: Move-Item -Path "./dist/com.turquia.discord-rpc" -Destination "./com.turquia.discord-rpc"
 
       - name: Upload artifact for deployment job (zip)
         uses: actions/upload-artifact@v4
         with:
           name: ZIP Release
-          path: ./com.tee.discord-rpc
-          
+          path: ./com.turquia.discord-rpc
+
       - name: Upload artifact for deployment job (zxp)
         uses: actions/upload-artifact@v4
         with:
           name: ZXP Release
-          path: ./dist/com.tee.discord-rpc.zxp
+          path: ./dist/com.turquia.discord-rpc.zxp

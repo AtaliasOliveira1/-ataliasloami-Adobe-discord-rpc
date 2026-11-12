@@ -21,7 +21,7 @@ export default function Navigator({setState}) {
     const [update, setUpdate] = useState(false)
 
     useEffect(() => {
-        fetch("https://api.github.com/repos/teeteeteeteetee/adobe-discord-rpc/releases/latest")
+        fetch("https://api.github.com/repos/AtaliasOliveira1/-ataliasloami-Adobe-discord-rpc/releases/latest")
         .then(response => response.json())
         .then(latest => {
             if(latest["tag_name"] != property.version){
@@ -31,12 +31,12 @@ export default function Navigator({setState}) {
     }, [])
 
     return (
-        <nav className="flex items-center justify-between flex-wrap bg-secondary p-6">
+        <nav className="flex items-center justify-between flex-wrap bg-secondary p-4 rounded-b-2xl shadow-lg">
             <div className="w-full flex items-center divide-x hover:bg-blend-lighten">
-                <NavItem onClick={() => setState("Preview")} href={"#"} text={"Preview"} icon={<FaDiscord className="text-gray-200 m-auto" />} />
-                <NavItem onClick={() => setState("Config")} href={"#"} text={"Config"} icon={<FaCog className="text-gray-200 m-auto" />} />
-                <NavItem onClick={() => setState("Debug")} href={"#"} text={"Debug"} icon={<VscDebugConsole className="text-gray-200 m-auto" />} />
-                <NavItem update={update} onClick={() => setState("Repository")} href={"#"} text={"Repository"} icon={<FaGithub className="text-gray-200 m-auto" />} />
+                <NavItem onClick={() => setState("Preview")} href={"#"} text={"Visualizar"} icon={<FaDiscord className="text-gray-200 m-auto text-lg" />} />
+                <NavItem onClick={() => setState("Config")} href={"#"} text={"Configuração"} icon={<FaCog className="text-gray-200 m-auto text-lg" />} />
+                <NavItem onClick={() => setState("Debug")} href={"#"} text={"Debug"} icon={<VscDebugConsole className="text-gray-200 m-auto text-lg" />} />
+                <NavItem update={update} onClick={() => setState("Repository")} href={"#"} text={"Repositório"} icon={<FaGithub className="text-gray-200 m-auto text-lg" />} />
             </div>
         </nav>
     );

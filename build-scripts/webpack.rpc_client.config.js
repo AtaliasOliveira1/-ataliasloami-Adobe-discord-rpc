@@ -27,7 +27,7 @@ module.exports = {
     target: 'node7.0',
     // target: 'node',
     externals: [nodeExternals({modulesDir: path.join(CLIENT_DIST_SRC, 'node_modules')})],
-    entry: ['babel-polyfill', ENTRY_POINT_CLIENT_PATH],
+    entry: ENTRY_POINT_CLIENT_PATH,
     output: {
         path: CLIENT_DIST_PATH,
         filename: 'bundle.js',
@@ -40,7 +40,7 @@ module.exports = {
                 loader: 'babel-loader',
                 options: {
                     presets: [
-                        ['env', {
+                        ['@babel/preset-env', {
                             'targets': {
                                 'node': 'current'
                             }

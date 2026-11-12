@@ -41,8 +41,8 @@ function build() {
         utils.log_progress('copying host code...')
         utils.copyRecursiveSync(fromSrc('host'), fromPlugin('host'))
         // copy the session's node modules folder
-        utils.log_progress('copying rpc_client node-modules...')
-        utils.copyRecursiveSync(fromSrc('rpc_client-src/node_modules'), fromPlugin('node_modules'))
+        // utils.log_progress('copying rpc_client node-modules...')
+        // utils.copyRecursiveSync(fromSrc('rpc_client-src/node_modules'), fromPlugin('node_modules'))
         // copying libs folder
         utils.log_progress('copying libs folder...')
         utils.copyRecursiveSync(fromSrc('libs'), fromPlugin('libs'))
@@ -63,7 +63,7 @@ function build() {
         var rendered_xml = manifest_template(pluginConfig)
 
         var xml_out_dir = path.join(pluginFolder, 'CSXS')
-        fs.mkdir(xml_out_dir, { recursive: true }, (err) => { if (err) throw err; });
+        fs.mkdirSync(xml_out_dir, { recursive: true })
 
         var xml_out_file = path.join(pluginFolder, 'CSXS', 'manifest.xml')
         fs.writeFileSync(xml_out_file, rendered_xml, 'utf-8')

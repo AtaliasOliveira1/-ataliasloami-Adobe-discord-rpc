@@ -21,7 +21,7 @@ function ResetConfig(){
     window.location.reload()
     resetConfiguration()
 }
-function SaveConfig(config){    
+function SaveConfig(config, setShowNotification){
     dispatchEvent("com.tee.rpc.config", config)
     for (const [key, value] of Object.entries(config)){
         console.log(key)
@@ -29,24 +29,32 @@ function SaveConfig(config){
     }
     // window.location.reload()
     console.log(config)
+    setShowNotification(true)
+    setTimeout(() => setShowNotification(false), 3000)
 }
 export default function Config() {
 
     const [config, setConfig] = useState({})
+    const [showNotification, setShowNotification] = useState(false)
 
     useEffect(() => {
         setConfig(getConfigurations())
     }, [])
 
     return (
-        <div className='w-screen'>
-            <div className='flex flex-col'>
-                <ConfigItem group="rpc" config={config} setConfig={setConfig} title="Rich Presence Configuration" template={rpcConfigurationTemplate} />
-                <ConfigItem group="extension" config={config} setConfig={setConfig} title="Extension Configuration" template={extensionConfigurationTemplate} />
+        <div className='w-full relative px-2'>
+            {showNotification && (
+                <div className="fixed top-4 right-4 bg-green-600 text-white px-3 py-1.5 rounded-lg shadow-lg animate-pulse z-50 text-xs">
+                    Configuração salva com sucesso!
+                </div>
+            )}
+            <div className='flex flex-col gap-3'>
+                <ConfigItem group="rpc" config={config} setConfig={setConfig} title="Configuração do Rich Presence" template={rpcConfigurationTemplate} />
+                <ConfigItem group="extension" config={config} setConfig={setConfig} title="Configuração da Extensão" template={extensionConfigurationTemplate} />
 
-                <div className='flex flex-row gap-2 self-center'>
-                    <button onClick={() => SaveConfig(config)} className='bg-button p-2 text-xs text-white rounded-sm'>Save Configuration</button>
-                    <button onClick={() => ResetConfig()} className='bg-transparent border border-error p-2 text-xs text-white rounded-sm'>Reset Default</button>
+                <div className='flex flex-row gap-2 self-center mt-2'>
+                    <button onClick={() => SaveConfig(config, setShowNotification)} className='bg-button p-2 text-xs text-white rounded-xl shadow-lg hover:opacity-90 transition-opacity'>Salvar Configuração</button>
+                    <button onClick={() => ResetConfig()} className='bg-transparent border border-error p-2 text-xs text-white rounded-xl shadow-lg hover:bg-error/20 transition-colors'>Restaurar Padrão</button>
                 </div>
             </div>
         </div>

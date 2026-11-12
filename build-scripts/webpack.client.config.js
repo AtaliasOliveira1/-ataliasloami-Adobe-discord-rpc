@@ -23,7 +23,7 @@ module.exports = ({
                 exclude: /node_modules/,
                 loader: "babel-loader",
                 options: {
-                    presets: ['env', 'react', 'stage-2']
+                    presets: ['@babel/preset-env', '@babel/preset-react']
                 }
             },
             {
@@ -40,10 +40,10 @@ module.exports = ({
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                loader: 'url-loader',
-                options: {
-                    limit: 25000,
-                },
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/[name][ext]'
+                }
             },
         ]
     },

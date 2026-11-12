@@ -25,12 +25,14 @@ export default function App(props) {
     useEffect(() => setState("Preview"), [])
 
     return (
-        <div className='h-screen w-full'>
+        <div className='h-full w-full flex flex-col overflow-hidden'>
             <Navigator setState={setState} />
-            {state === "Preview" && <Preview />}
-            {state === "Config" && <Config />}
-            {state === "Debug" && <Debug />}
-            {state === "Repository" && <Repository />}
+            <div className='flex-1 overflow-auto'>
+                {state === "Preview" && <Preview />}
+                {state === "Config" && <Config />}
+                {state === "Debug" && <Debug />}
+                {state === "Repository" && <Repository />}
+            </div>
         </div>
     )
 }

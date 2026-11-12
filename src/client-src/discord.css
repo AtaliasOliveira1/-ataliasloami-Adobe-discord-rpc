@@ -18,7 +18,7 @@
 
 :root {
   --light-grey: hsl(218deg, 4%, 46%);
-  --green: hsl(152deg, 45%, 48%);
+  --green: hsl(0deg, 70%, 50%);
 }
 
 .checkbox-container {

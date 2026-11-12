@@ -13,7 +13,7 @@
     "archive": "node ./build-scripts/archive.js",
     "release:dev": "npm run build:dev && npm run deploy:dev",
     "release:prod": "npm run build:prod && npm run deploy:prod && npm run archive",
-    "b": "babel ./client/js --out-dir ./client/out",
+
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": {
@@ -22,17 +22,12 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.22.6",
+    "@babel/core": "^7.29.13",
     "@babel/preset-env": "^7.22.6",
+    "@babel/preset-react": "^8.0.1",
     "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.14",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
+    "babel-loader": "^8.4.1",
     "chalk": "^2.4.2",
     "css-loader": "^6.8.1",
     "cssnano": "^5.1.15",
@@ -60,6 +55,7 @@
     "@babel/plugin-proposal-optional-catch-binding": "^7.18.6",
     "axios": "^1.4.0",
     "console-feed": "^3.4.3",
+    "discord-rpc": "^4.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1"

@@ -4,14 +4,14 @@ const srcFolder = path.join(root, "src")
 const destFolder = path.join(root, "dist")
 const certPath = path.join(destFolder, "cert.p12")
 module.exports = {
-    extensionBundleId: 'com.tee.discord-rpc',
-    extensionBundlePanelId: 'com.tee.discord-rpc-panel',
+    extensionBundleId: 'com.turquia.discord-rpc',
+    extensionBundlePanelId: 'com.turquia.discord-rpc-panel',
     extensionBundleName: 'Discord Rich Presence',
     extensionBundleVersion: '1.0.1',
     cepVersion: '8.0',
-    panelName: 'Discord Rich Presence',
-    width: '350',
-    height: '500',
+    panelName: 'Discord - @ataliasloami',
+    width: '300',
+    height: '400',
     root: root,
     sourceFolder: srcFolder,
     destinationFolder: destFolder,

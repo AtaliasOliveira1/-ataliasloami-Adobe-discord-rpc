@@ -25,7 +25,7 @@ export default function Repository() {
     const [latest, setLatest] = useState(property.version)
 
     useEffect(() => {
-        fetch("https://api.github.com/repos/teeteeteeteetee/adobe-discord-rpc/releases/latest")
+        fetch("https://api.github.com/repos/AtaliasOliveira1/-ataliasloami-Adobe-discord-rpc/releases/latest")
             .then(response => response.json())
             .then(latest => {
                 if (latest["tag_name"] != property.version) {
@@ -38,16 +38,16 @@ export default function Repository() {
     return (
         <div className='w-screen'>
             <div className='flex flex-col h-max'>
-                <div className='flex items-center flex-col justify-center text-lg text-white gap-1 pt-4 mb-auto'>
-                    <FaGithub className='cursor-pointer' size={64} onClick={() => openURLInDefaultBrowser("https://github.com/teeteeteeteetee/adobe-discord-rpc")} />
-                    <FaDiscord className='cursor-pointer' size={64} onClick={() => openURLInDefaultBrowser("https://discord.com/invite/RGtxbuFtzb")} />
+                <div className='flex items-center flex-col justify-center text-sm text-white gap-1 pt-4 mb-auto'>
+                    <FaGithub className='cursor-pointer hover:scale-110 transition-transform' size={48} onClick={() => openURLInDefaultBrowser("https://github.com/AtaliasOliveira1/-ataliasloami-Adobe-discord-rpc")} />
+                    <FaDiscord className='cursor-pointer hover:scale-110 transition-transform' size={48} onClick={() => openURLInDefaultBrowser("https://discord.com/invite/RGtxbuFtzb")} />
                     <br />
-                    <p>Version: {property.version}</p>
-                    <p>Latest version: {latest}</p>
+                    <p>Versão: {property.version}</p>
+                    <p>Versão mais recente: {latest}</p>
 
                     {update && (
-                        <a className='text-sm text-gray-400 cursor-pointer inline-flex items-center hover:underline' onClick={() => openURLInDefaultBrowser(`https://github.com/teeteeteeteetee/adobe-discord-rpc/releases/tag/${latest}`)}>
-                            New version is ready!
+                        <a className='text-sm text-gray-400 cursor-pointer inline-flex items-center hover:underline' onClick={() => openURLInDefaultBrowser(`https://github.com/AtaliasOliveira1/-ataliasloami-Adobe-discord-rpc/releases/tag/${latest}`)}>
+                            Nova versão disponível!
                             <svg className="w-3 h-3 ms-2.5 rtl:rotate-[270deg]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
                                 <path stroke="currentColor" strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778" />
                             </svg>
@@ -55,7 +55,7 @@ export default function Repository() {
                     )}
                 </div>
                 <footer>
-                    <p className='text-xs text-gray-600 pl-2'>made by tee</p>
+                    <p className='text-xs text-gray-600 pl-2'>feito por ataliasloami</p>
                 </footer>
             </div>
         </div>

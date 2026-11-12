@@ -44,10 +44,10 @@ export default function ConfigItem({ title, template, group, config, setConfig }
                         const newConfig = JSON.parse(JSON.stringify(config));
                         newConfig[group][id].value = e.target.value;
                         setConfig(newConfig);
-                    }} id={id} className="bg-dropdown outline-none w-32 px-2 rounded-md" name="logo">
-                        <option value="old">Old</option>
-                        <option value="new">Updated</option>
-                        <option disabled value="custom">Custom</option>
+                    }} id={id} className="bg-dropdown outline-none w-28 px-2 py-1 rounded-lg border border-red-900/30 focus:border-red-500 transition-colors text-xs" name="logo">
+                        <option value="old">Antigo</option>
+                        <option value="new">Atualizado</option>
+                        <option disabled value="custom">Personalizado</option>
                     </select>
                 </div>
             )
@@ -74,8 +74,8 @@ export default function ConfigItem({ title, template, group, config, setConfig }
 
     return (
         <div className="pl-2">
-            <p className="text-lg text-white">{title}</p>
-            <ul className="text-white p-2">{list}</ul>
+            <p className="text-base text-white font-bold mb-3">{title}</p>
+            <ul className="text-white p-3 bg-secondary rounded-xl shadow-lg space-y-2 text-sm">{list}</ul>
         </div>
     );
 }
